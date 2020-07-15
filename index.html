@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Smart Rockets (Genetic Algorithm)</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/all.min.css">
+    <style>
+        canvas {
+            font-family: 'Font Awesome 5 Pro';
+            font-weight: 900;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mb-4 mt-4">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <!-- Title -->
+                <h1 style="font-size: 3.5rem;">
+                    <font class="text-primary">S</font>mart <font class="text-primary">R</font>ockets <small
+                        class="text-muted"> ( Genetic Algorithm )</small>
+                </h1>
+                <h4>Each rockets goal is to reach the yellow square without crashing. A genetic algorithm creates new
+                    populations, with the most "fit" rockets most likely to become parents. <a
+                        href="https://en.wikipedia.org/wiki/Genetic_algorithm" target="_blank">About
+                        Genetic Algorithm</a></h4>
+            </div>
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <!-- Population size configuration -->
+                            <h4>Population Size</h4>
+                            <select class="custom-select" id="maxpop_id"
+                                oninput="javascript: totalPopulation = parseInt(this.value);">
+                                <option selected value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="30">30</option>
+                                <option value="40">40</option>
+                                <option value="60">60</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <!-- Barriers configuration -->
+                            <h4>Total Barriers</h4>
+                            <select class="custom-select" id="barriers_id"
+                                oninput="javascript: newTotalBarriers = parseInt(this.value);">
+                                <option selected value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <!-- Mutation rate -->
+                            <h4>Mutation Rate</h4>
+                            <select class="custom-select" id="mutation_rate_id"
+                                oninput="javascript: newMutationRate = parseFloat(this.value);">
+                                <option selected value="0.01">0.01</option>
+                                <option value="0.05">0.05</option>
+                                <option value="0.08">0.08</option>
+                                <option value="0.1">0.1</option>
+                                <option value="0.3">0.3</option>
+                                <option value="0.9">0.9</option>
+                                <option value="2.9">2.9</option>
+                                <option value="4.9">4.9</option>
+                                <option value="6.9">6.9</option>
+                                <option value="16.9">16.9</option>
+                                <option value="36.9">36.9</option>
+                                <option value="56.9">56.9</option>
+                                <option value="76.9">76.9</option>
+                                <option value="96.9">96.9</option>
+                                <option value="99.9">99.9</option>
+                            </select>
+                        </div>
+                        <!-- Start algo -->
+                        <button class="btn btn-primary" id="submit_id"
+                            onclick="javascript: this.childNodes[1].data = ' ReStart'; startAlgorithm();"
+                            type="submit"><i class="fal fa-play"></i> START</button>
+                        <div id="result_id" class="d-none">
+                            <br>
+                            <!-- Result info -->
+                            <h3 class="bold">Result</h4>
+                                <h4>Life Span <font class="text-primary" id="count_id">0</font>
+                                </h4>
+                                <h4> Generations <font class="text-primary" id="generation_id">0</font>
+                                </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <center>
+            <canvas height="600" width="600" id="canvas" class="shadow"></canvas>
+        </center>
+        <div class="mt-2 card shadow-sm">
+            <div class="card-body">
+                <h4>Love Saroha <br>
+                    <font class="text-primary"><i class="fad fa-envelope"></i> lovesaroha1994@gmail.com</font>
+                </h4>
+                <h4>Source Code <br><a href="https://github.com/lovesaroha/Smart-Rockets-GA" target="_blank"><i
+                            class="fad fa-code-merge text-primary"></i>
+                        https://github.com/lovesaroha/Smart-Rockets-GA</a></h4>
+                <h4>Website <br><a href="https://lovesaroha.com"><i class="fad fa-link text-primary"></i>
+                        www.lovesaroha.com</a></h4>
+            </div>
+        </div>
+    </div>
+    <!-- Include script.js file -->
+    <script type="text/javascript" src="./assets/js/loakuMath.js"></script>
+    <script type="text/javascript" src="./assets/js/script.js"></script>
+</body>
+
+</html>
